@@ -14,10 +14,6 @@
     },
     "autoload": {
         "psr-4": {
-            "Phalcon\\Cache\\": "fake/Cache/",
-            "Phalcon\\Storage\\": "fake/Storage/",
-            "Phalcon\\Traits\\": "fake/Traits/",
-            "Phalcon\\Support\\": "fake/Support/",
             "Phalcon\\Proxy\\Psr16\\": "src/",
             "Phalcon\\Proxy\\Psr16\\Tests\\Fixtures\\": "tests/_data/fixtures/",
             "Phalcon\\Proxy\\Psr16\\Tests\\Unit\\": "tests/unit/"
