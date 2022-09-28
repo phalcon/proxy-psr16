@@ -1,0 +1,7 @@
+tests/integration/Cache/Cache/ClearCest.php:cacheCacheClear
+tests/integration/Cache/Cache/DeleteCest.php:cacheCacheDelete
+tests/integration/Cache/Cache/DeleteMultipleCest.php:cacheCacheDeleteMultiple
+tests/integration/Cache/Cache/GetMultipleCest.php:cacheCacheGetMultiple
+tests/integration/Cache/Cache/GetSetCest.php:cacheCacheSetGet
+tests/integration/Cache/Cache/HasCest.php:cacheCacheHas
+tests/integration/Cache/Cache/SetMultipleCest.php:cacheCacheSetMultiple

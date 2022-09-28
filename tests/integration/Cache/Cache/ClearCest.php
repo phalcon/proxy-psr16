@@ -34,7 +34,7 @@ class ClearCest
 
         $serializer = new SerializerFactory();
         $factory    = new AdapterFactory($serializer);
-        $instance   = $factory->newInstance('apcu');
+        $instance   = $factory->newInstance('redis');
 
         $adapter = new Cache($instance);
 
