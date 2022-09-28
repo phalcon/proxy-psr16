@@ -92,7 +92,7 @@ jobs:
       - name: Setup Tests
         shell: bash
         run: |
-          cp tests/_config/.env.default .env
+          cp config/.env.default .env
           vendor/bin/codecept build
 #          php tests/_config/generate-db-schemas.php
 
