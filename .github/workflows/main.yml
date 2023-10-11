@@ -35,9 +35,9 @@ jobs:
     name: Validate Tests code style
     if: "!contains(github.event.head_commit.message, 'ci skip')"
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Run PHP_CodeSniffer
         run: docker run --rm -v $(pwd):/data cytopia/phpcs --standard=./phpcs.xml
@@ -53,7 +53,7 @@ jobs:
 #        php: [ '7.4', '8.0', '8.1' ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup platform specific environment
         shell: pwsh
@@ -73,22 +73,13 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Validate composer
+      - name: "Validate composer"
         run: composer validate --no-check-all --no-check-publish
 
-      - name: Get Composer Cache Directory
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: Setup Composer Cache
-        uses: actions/cache@v2
+      - name: "Install development dependencies with Composer"
+        uses: "ramsey/composer-install@v2"
         with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-composer-${{ matrix.php }}-
-
-      - run: composer install --prefer-dist
+          composer-options: "--prefer-dist"
 
       - name: Setup Tests
         shell: bash
@@ -107,4 +98,4 @@ jobs:
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           directory: ./tests/_output/
-          files: coverage-7.4.xml,coverage-8.0.xml,coverage-8.1.xml
+          files: coverage-8.0.xml,coverage-8.1.xml,coverage-8.2.xml
