@@ -2,7 +2,7 @@ FROM composer:latest as composer
 FROM php:8.0-fpm
 
 # Environment
-ENV PHALCON_VERSION="5.0.2" \
+ENV PHALCON_VERSION="5.3.1" \
     PHP_VERSION="8.0" \
     MY_USER="phalcon" \
 	MY_GROUP="phalcon" \

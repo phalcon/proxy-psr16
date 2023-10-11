@@ -38,7 +38,5 @@ composer require phalcon/proxy-psr16
 <!-- External links should be here -->
 [actions_badge]: https://github.com/phalcon/proxy-psr16/actions/workflows/main.yml/badge.svg
 [codecov_badge]: https://codecov.io/gh/phalcon/proxy-psr16/branch/master/graph/badge.svg?token=426jh06aRu
-
 [pds_skeleton]: https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square
-
-[discord-badge]:            https://img.shields.io/discord/310910488152375297?label=Discord&logo=discord&style=flat-square
+[discord-badge]: https://img.shields.io/discord/310910488152375297?label=Discord&logo=discord&style=flat-square
