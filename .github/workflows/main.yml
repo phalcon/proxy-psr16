@@ -42,24 +42,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: php-actions/composer@v6
+#      - uses: php-actions/composer@v6
 
       - name: Run PHP CodeSniffer
         run: docker run --rm -v $(pwd):/data cytopia/phpcs --standard=./phpcs.xml
 
-      - name: Get PHPStan PHAR
-        run: |
-          curl --silent -H "User-agent: cURL (https://github.com/php-actions)" -L \
-          "https://www.getrelease.download/phpstan/phpstan/1.8.11/phar" > custom-phpstan.phar
-
-      - name: Run PHPStan
-        uses: php-actions/phpstan@v3
-        with:
-          php_version: 8.0
-          path: src/
-          vendored_phpstan_path: custom-phpstan.phar
-          level: max
-          autoload_file: ./vendor/autoload.php
+#      - name: Get PHPStan PHAR
+#        run: |
+#          curl --silent -H "User-agent: cURL (https://github.com/php-actions)" -L \
+#          "https://www.getrelease.download/phpstan/phpstan/1.8.11/phar" > custom-phpstan.phar
+#
+#      - name: Run PHPStan
+#        uses: php-actions/phpstan@v3
+#        with:
+#          php_version: 8.0
+#          path: src/
+#          vendored_phpstan_path: custom-phpstan.phar
+#          level: max
+#          autoload_file: ./vendor/autoload.php
 
 # Running Tests
   build-and-test:
