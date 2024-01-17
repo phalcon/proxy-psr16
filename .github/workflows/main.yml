@@ -108,8 +108,8 @@ jobs:
 
 
 # Qodana
-  quodana:
-    name: Quodana
+  qodana:
+    name: Qodana
     runs-on: ubuntu-latest
 
     permissions:
