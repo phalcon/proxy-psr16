@@ -31,17 +31,6 @@ env:
   EXTENSIONS: apcu, gettext, gd, igbinary, imagick, intl, json, mbstring, msgpack, memcached, phalcon-5.3.1, sqlite3, yaml, redis, :memcache
 
 jobs:
-  phpcs:
-    name: Validate Tests code style
-    if: "!contains(github.event.head_commit.message, 'ci skip')"
-
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run PHP_CodeSniffer
-        run: docker run --rm -v $(pwd):/data cytopia/phpcs --standard=./phpcs.xml
-
   build-and-test:
     name: tests / PHP-${{ matrix.php }}
 
@@ -53,13 +42,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Setup platform specific environment
-        shell: pwsh
-        run: |
-          git config --global core.autocrlf false
-          $SessionSavePath = '/tmp' 
-          Write-Output "SESSION_SAVE_PATH=$SessionSavePath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -79,6 +61,12 @@ jobs:
         uses: "ramsey/composer-install@v2"
         with:
           composer-options: "--prefer-dist"
+
+      - name: Run PHP CodeSniffer
+        run: vendor/bin/phpcs --standard=./phpcs.xml
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyze -l max src/
 
       - name: Setup Tests
         shell: bash

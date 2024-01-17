@@ -173,7 +173,15 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function set(string $key, mixed $value, mixed $ttl = null): bool
     {
-        return $this->doSet($key, $value, $ttl);
+        try {
+            return $this->doSet($key, $value, $ttl);
+        } catch (PhalconCacheInvalidArgumentException $ex) {
+            throw new InvalidArgumentException(
+                $ex->getMessage(),
+                $ex->getCode(),
+                $ex->getPrevious()
+            );
+        }
     }
 
     /**
