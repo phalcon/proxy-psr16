@@ -47,7 +47,7 @@ jobs:
         run: docker run --rm -v $(pwd):/data cytopia/phpcs --standard=./phpcs.xml
 
       - name: Run PHPStan
-        run: docker run --rm -v $(pwd):/app ghcr.io/phpstan/phpstan -c phpstan.neon
+        run: docker run --rm -v $(pwd):/app ghcr.io/phpstan/phpstan -c phpstan.neon src/
 
 # Running Tests
   build-and-test:
