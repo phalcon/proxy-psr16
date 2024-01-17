@@ -62,11 +62,11 @@ jobs:
         with:
           composer-options: "--prefer-dist"
 
-      - name: Run PHP CodeSniffer
-        run: vendor/bin/phpcs --standard=./phpcs.xml
+      - name: Run PHP_CodeSniffer
+        run: docker run --rm -v $(pwd):/data cytopia/phpcs --standard=./phpcs.xml
 
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyze -l max src/
+        run: docker run --rm -v $(pwd):/data phpstan/phpstan -c phpstan.neon
 
 # Running Tests
   build-and-test:
