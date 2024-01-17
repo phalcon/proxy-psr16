@@ -55,9 +55,11 @@ jobs:
       - name: Run PHPStan
         uses: php-actions/phpstan@v3
         with:
+          php_version: 8.0
           path: src/
           vendored_phpstan_path: custom-phpstan.phar
-          command: -c ./phpstan.neon
+          level: max
+          autoload_file: ./vendor/autoload.php
 
 # Running Tests
   build-and-test:
