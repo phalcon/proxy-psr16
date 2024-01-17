@@ -73,7 +73,6 @@ jobs:
     name: tests / PHP-${{ matrix.php }}
     runs-on: ubuntu-latest
 
-    needs: quality
     permissions:
       contents: read # to fetch code (actions/checkout)
 
@@ -120,7 +119,6 @@ jobs:
     name: Quodana
     runs-on: ubuntu-latest
 
-    needs: quality
     permissions:
       contents: read # to fetch code (actions/checkout)
 
