@@ -98,3 +98,18 @@ jobs:
           token: ${{secrets.CODECOV_TOKEN}}
           directory: ./tests/_output/
           files: coverage-8.0.xml,coverage-8.1.xml,coverage-8.2.xml,coverage-8.3.xml
+
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@v2023.2
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+#        with:
+#          args: --baseline,qodana.sarif.json
+
+      - name: "Upload to Qodana"
+        run: |
+          docker run \
+            -v $(pwd):/data/project/ \
+            -v ./reports/:/data/coverage \
+            -e QODANA_TOKEN="${{ secrets.QODANA_TOKEN }}" \
+            jetbrains/qodana-php
