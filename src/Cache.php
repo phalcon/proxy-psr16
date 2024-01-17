@@ -16,6 +16,7 @@ namespace Phalcon\Proxy\Psr16;
 use DateInterval;
 use Phalcon\Cache\AbstractCache;
 use Phalcon\Cache\Adapter\AdapterInterface;
+use Phalcon\Cache\Exception\InvalidArgumentException as PhalconCacheInvalidArgumentException;
 use Psr\SimpleCache\CacheInterface;
 
 /**
@@ -49,7 +50,15 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function delete(string $key): bool
     {
-        return $this->doDelete($key);
+        try {
+            return $this->doDelete($key);
+        } catch (PhalconCacheInvalidArgumentException $ex) {
+            throw new InvalidArgumentException(
+                $ex->getMessage(),
+                $ex->getCode(),
+                $ex->getPrevious()
+            );
+        }
     }
 
     /**
@@ -83,7 +92,15 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function get(string $key, mixed $defaultValue = null): mixed
     {
-        return $this->doGet((string) $key, $defaultValue);
+        try {
+            return $this->doGet($key, $defaultValue);
+        } catch (PhalconCacheInvalidArgumentException $ex) {
+            throw new InvalidArgumentException(
+                $ex->getMessage(),
+                $ex->getCode(),
+                $ex->getPrevious()
+            );
+        }
     }
 
     /**
@@ -102,7 +119,15 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function getMultiple(mixed $keys, mixed $defaultValue = null): iterable
     {
-        return $this->doGetMultiple($keys, $defaultValue);
+        try {
+            return $this->doGetMultiple($keys, $defaultValue);
+        } catch (PhalconCacheInvalidArgumentException $ex) {
+            throw new InvalidArgumentException(
+                $ex->getMessage(),
+                $ex->getCode(),
+                $ex->getPrevious()
+            );
+        }
     }
 
     /**
@@ -117,7 +142,15 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function has(string $key): bool
     {
-        return $this->doHas($key);
+        try {
+            return $this->doHas($key);
+        } catch (PhalconCacheInvalidArgumentException $ex) {
+            throw new InvalidArgumentException(
+                $ex->getMessage(),
+                $ex->getCode(),
+                $ex->getPrevious()
+            );
+        }
     }
 
     /**
