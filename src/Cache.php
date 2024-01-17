@@ -94,7 +94,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @param mixed                  $default Default value to return for
      *                                        keys that do not exist.
      *
-     * @return iterable<array-key, mixed> A list of key => value pairs. Cache
+     * @return iterable<string, mixed> A list of key => value pairs. Cache
      * keys that do not exist or are stale will have $default as value.
      *
      * @throws InvalidArgumentException MUST be thrown if $keys is neither an
