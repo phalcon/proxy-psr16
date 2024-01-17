@@ -31,8 +31,47 @@ env:
   EXTENSIONS: apcu, phalcon-5.6.0
 
 jobs:
+
+# Quality Tools
+  quality:
+    name: Quality Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          extensions: ${{ env.EXTENSIONS }}
+          ini-values: apc.enable_cli=on, session.save_path=${{ env.SESSION_SAVE_PATH }}
+          tools: pecl, composer:v2
+          coverage: xdebug
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Validate composer"
+        run: composer validate --no-check-all --no-check-publish
+
+      - name: "Install development dependencies with Composer"
+        uses: "ramsey/composer-install@v2"
+        with:
+          composer-options: "--prefer-dist"
+
+      - name: Run PHP CodeSniffer
+        run: vendor/bin/phpcs --standard=./phpcs.xml
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyze -l max src/
+
+# Running Tests
   build-and-test:
     name: tests / PHP-${{ matrix.php }}
+    needs: quality
+
+    permissions:
+      contents: read # to fetch code (actions/checkout)
 
     runs-on: ubuntu-latest
     strategy:
@@ -71,3 +110,64 @@ jobs:
         if: always()
         run: |
           vendor/bin/phpunit tests/unit --testdox --process-isolation -v 
+
+
+# Qodana
+  quodana:
+    needs: build-and-test
+
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
+    name: Quodana
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          extensions: ${{ env.EXTENSIONS }}
+          ini-values: apc.enable_cli=on, session.save_path=${{ env.SESSION_SAVE_PATH }}
+          tools: pecl, composer:v2
+          coverage: xdebug
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Validate composer"
+        run: composer validate --no-check-all --no-check-publish
+
+      - name: "Install development dependencies with Composer"
+        uses: "ramsey/composer-install@v2"
+        with:
+          composer-options: "--prefer-dist"
+
+      - name: Setup Tests
+        shell: bash
+        run: |
+          cp config/.env.default .env
+
+      - name: Run Unit Tests
+        if: always()
+        run: |
+          vendor/bin/phpunit tests/unit \
+            --process-isolation \
+            -v \
+            --coverage-php tests/support/output/coverage.xml
+
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@v2023.2
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+        with:
+          args: --baseline,qodana.sarif.json
+
+      - name: "Upload to Qodana"
+        run: |
+          docker run \
+            -v $(pwd):/data/project/ \
+            -v ./tests/support/output/:/data/coverage \
+            -e QODANA_TOKEN="${{ secrets.QODANA_TOKEN }}" \
+            jetbrains/qodana-php
