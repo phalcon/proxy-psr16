@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1705505933">
+  <project timestamp="1705505933">
+    <file name="/srv/src/Cache.php">
+      <class name="Phalcon\Proxy\Psr16\Cache" namespace="global">
+        <metrics complexity="9" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="18" coveredelements="18"/>
+      </class>
+      <line num="34" type="method" name="clear" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="50" type="method" name="delete" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="52" type="stmt" count="3"/>
+      <line num="67" type="method" name="deleteMultiple" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="69" type="stmt" count="2"/>
+      <line num="84" type="method" name="get" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="86" type="stmt" count="4"/>
+      <line num="103" type="method" name="getMultiple" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="105" type="stmt" count="3"/>
+      <line num="118" type="method" name="has" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="120" type="stmt" count="8"/>
+      <line num="141" type="method" name="set" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="143" type="stmt" count="8"/>
+      <line num="163" type="method" name="setMultiple" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="165" type="stmt" count="3"/>
+      <line num="173" type="method" name="getExceptionClass" visibility="protected" complexity="1" crap="1" count="6"/>
+      <line num="175" type="stmt" count="6"/>
+      <metrics loc="178" ncloc="60" classes="1" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="18" coveredelements="18"/>
+    </file>
+    <file name="/srv/src/InvalidArgumentException.php">
+      <class name="Phalcon\Proxy\Psr16\InvalidArgumentException" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="24" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="2" loc="202" ncloc="73" classes="1" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="18" coveredelements="18"/>
+  </project>
+</coverage>
