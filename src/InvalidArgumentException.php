@@ -13,11 +13,12 @@ declare(strict_types=1);
 
 namespace Phalcon\Proxy\Psr16;
 
+use Exception as BaseException;
 use Psr\SimpleCache\InvalidArgumentException as PsrInvalidArgumentException;
 
 /**
  * Exceptions thrown in Phalcon\Proxy\Psr16\Cache will use this class
  */
-class InvalidArgumentException extends \Exception implements PsrInvalidArgumentException
+class InvalidArgumentException extends BaseException implements PsrInvalidArgumentException
 {
 }
