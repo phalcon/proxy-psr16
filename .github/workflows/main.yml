@@ -43,30 +43,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.0
-          extensions: ${{ env.EXTENSIONS }}
-          ini-values: apc.enable_cli=on, session.save_path=${{ env.SESSION_SAVE_PATH }}
-          tools: pecl, composer:v2
-          coverage: xdebug
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Validate composer"
-        run: composer validate --no-check-all --no-check-publish
-
-      - name: "Install development dependencies with Composer"
-        uses: "ramsey/composer-install@v2"
-        with:
-          composer-options: "--prefer-dist"
-
       - name: Run PHP_CodeSniffer
         run: docker run --rm -v $(pwd):/data cytopia/phpcs --standard=./phpcs.xml
 
       - name: Run PHPStan
-        run: docker run --rm -v $(pwd):/data phpstan/phpstan -c phpstan.neon
+        run: docker run --rm -v $(pwd):/app ghcr.io/phpstan/phpstan -c phpstan.neon
 
 # Running Tests
   build-and-test:
