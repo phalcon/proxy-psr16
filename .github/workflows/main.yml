@@ -89,7 +89,7 @@ jobs:
 
       - name: Run Unit Tests
         if: always()
-        run: vendor/bin/codecept run --coverage-xml=coverage-${{ matrix.php }}.xml --ext DotReporter unit
+        run: vendor/bin/codecept run --coverage-xml=coverage-${{ matrix.php }}.xml --ext DotReporter integration
 
       - name: Upload coverage to Codecov
         if: success()
@@ -103,8 +103,8 @@ jobs:
         uses: JetBrains/qodana-action@v2023.2
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
-#        with:
-#          args: --baseline,qodana.sarif.json
+        with:
+          args: --baseline,qodana.sarif.json
 
       - name: "Upload to Qodana"
         run: |
