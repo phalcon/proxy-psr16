@@ -75,7 +75,15 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function deleteMultiple($keys): bool
     {
-        return $this->doDeleteMultiple($keys);
+        try {
+            return $this->doDeleteMultiple($keys);
+        } catch (PhalconCacheInvalidArgumentException $ex) {
+            throw new InvalidArgumentException(
+                $ex->getMessage(),
+                $ex->getCode(),
+                $ex->getPrevious()
+            );
+        }
     }
 
     /**
