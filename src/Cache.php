@@ -16,7 +16,6 @@ namespace Phalcon\Proxy\Psr16;
 use DateInterval;
 use Phalcon\Cache\AbstractCache;
 use Phalcon\Cache\Adapter\AdapterInterface;
-use Phalcon\Cache\Exception\InvalidArgumentException as PhalconCacheInvalidArgumentException;
 use Psr\SimpleCache\CacheInterface;
 
 /**
@@ -50,15 +49,7 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function delete(string $key): bool
     {
-        try {
-            return $this->doDelete($key);
-        } catch (PhalconCacheInvalidArgumentException $ex) {
-            throw new InvalidArgumentException(
-                $ex->getMessage(),
-                $ex->getCode(),
-                $ex->getPrevious()
-            );
-        }
+        return $this->doDelete($key);
     }
 
     /**
@@ -75,22 +66,14 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function deleteMultiple($keys): bool
     {
-        try {
-            return $this->doDeleteMultiple($keys);
-        } catch (PhalconCacheInvalidArgumentException $ex) {
-            throw new InvalidArgumentException(
-                $ex->getMessage(),
-                $ex->getCode(),
-                $ex->getPrevious()
-            );
-        }
+        return $this->doDeleteMultiple($keys);
     }
 
     /**
      * Fetches a value from the cache.
      *
-     * @param string $key          The unique key of this item in the cache.
-     * @param mixed  $defaultValue Default value to return if the key does not exist.
+     * @param string $key     The unique key of this item in the cache.
+     * @param mixed  $default Default value to return if the key does not exist.
      *
      * @return mixed The value of the item from the cache, or $default in case
      * of cache miss.
@@ -98,26 +81,18 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if the $key string is
      * not a legal value.
      */
-    public function get(string $key, mixed $defaultValue = null): mixed
+    public function get(string $key, mixed $default = null): mixed
     {
-        try {
-            return $this->doGet($key, $defaultValue);
-        } catch (PhalconCacheInvalidArgumentException $ex) {
-            throw new InvalidArgumentException(
-                $ex->getMessage(),
-                $ex->getCode(),
-                $ex->getPrevious()
-            );
-        }
+        return $this->doGet($key, $default);
     }
 
     /**
      * Obtains multiple cache items by their unique keys.
      *
-     * @param iterable<mixed, mixed> $keys         A list of keys that can be
-     *                                             obtained in a single operation.
-     * @param mixed                  $defaultValue Default value to return for
-     *                                             keys that do not exist.
+     * @param iterable<mixed, mixed> $keys    A list of keys that can be
+     *                                        obtained in a single operation.
+     * @param mixed                  $default Default value to return for
+     *                                        keys that do not exist.
      *
      * @return iterable<array-key, mixed> A list of key => value pairs. Cache
      * keys that do not exist or are stale will have $default as value.
@@ -125,17 +100,9 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if $keys is neither an
      * array nor a Traversable, or if any of the $keys are not a legal value.
      */
-    public function getMultiple(mixed $keys, mixed $defaultValue = null): iterable
+    public function getMultiple(mixed $keys, mixed $default = null): iterable
     {
-        try {
-            return $this->doGetMultiple($keys, $defaultValue);
-        } catch (PhalconCacheInvalidArgumentException $ex) {
-            throw new InvalidArgumentException(
-                $ex->getMessage(),
-                $ex->getCode(),
-                $ex->getPrevious()
-            );
-        }
+        return $this->doGetMultiple($keys, $default);
     }
 
     /**
@@ -150,15 +117,7 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function has(string $key): bool
     {
-        try {
-            return $this->doHas($key);
-        } catch (PhalconCacheInvalidArgumentException $ex) {
-            throw new InvalidArgumentException(
-                $ex->getMessage(),
-                $ex->getCode(),
-                $ex->getPrevious()
-            );
-        }
+        return $this->doHas($key);
     }
 
     /**
@@ -181,15 +140,7 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function set(string $key, mixed $value, mixed $ttl = null): bool
     {
-        try {
-            return $this->doSet($key, $value, $ttl);
-        } catch (PhalconCacheInvalidArgumentException $ex) {
-            throw new InvalidArgumentException(
-                $ex->getMessage(),
-                $ex->getCode(),
-                $ex->getPrevious()
-            );
-        }
+        return $this->doSet($key, $value, $ttl);
     }
 
     /**

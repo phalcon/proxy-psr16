@@ -79,7 +79,7 @@ jobs:
           vendor/bin/phpunit tests/unit \
             --process-isolation \
             -v \
-            --coverage-clover tests/support/output/coverage-${{ matrix.php }}.xml
+            --coverage-php tests/support/output/coverage-${{ matrix.php }}.xml
 
       - name: Upload coverage to Codecov
         if: success()
