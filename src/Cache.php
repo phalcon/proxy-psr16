@@ -16,12 +16,11 @@ namespace Phalcon\Proxy\Psr16;
 use DateInterval;
 use Phalcon\Cache\AbstractCache;
 use Phalcon\Cache\Adapter\AdapterInterface;
-use Phalcon\Cache\Exception\InvalidArgumentException;
 use Psr\SimpleCache\CacheInterface;
 
 /**
- * This component offers caching capabilities for your application.
- * Phalcon\Cache implements PSR-16.
+ * Class acting as a proxy between Phalcon\Cache and the PSR\SimpleCache
+ * interface
  *
  * @property AdapterInterface $adapter
  */
