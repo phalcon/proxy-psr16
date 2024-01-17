@@ -153,13 +153,13 @@
               "name": "MySQL"
             },
             {
-              "id": "PHP/PHPDoc/Code style",
-              "name": "Code style",
+              "id": "PHP/Control flow",
+              "name": "Control flow",
               "relationships": [
                 {
                   "target": {
-                    "id": "PHP/PHPDoc",
-                    "index": 2,
+                    "id": "PHP",
+                    "index": 0,
                     "toolComponent": {
                       "name": "QDPHP"
                     }
@@ -171,13 +171,13 @@
               ]
             },
             {
-              "id": "PHP/Control flow",
-              "name": "Control flow",
+              "id": "PHP/PHPDoc/Code style",
+              "name": "Code style",
               "relationships": [
                 {
                   "target": {
-                    "id": "PHP",
-                    "index": 0,
+                    "id": "PHP/PHPDoc",
+                    "index": 2,
                     "toolComponent": {
                       "name": "QDPHP"
                     }
@@ -1524,39 +1524,6 @@
                 ]
               },
               {
-                "id": "PhpMissingDocCommentInspection",
-                "shortDescription": {
-                  "text": "Missing PHPDoc comment"
-                },
-                "fullDescription": {
-                  "text": "Reports non-fully typed elements without a PHPDoc comment or with a PHPDoc comment only containing the '@noinspection' tag. You can use the Enforce PHPDoc Comment inspection to report fully typed elements.",
-                  "markdown": "Reports non-fully typed elements without a PHPDoc comment or with a PHPDoc comment only containing the `@noinspection` tag.\n\nYou can use the *Enforce PHPDoc Comment* inspection to report fully typed elements."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpMissingDocCommentInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/PHPDoc/Code style",
-                      "index": 11,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpWriteAccessToReferencedArrayValueWithoutUnsetInspection",
                 "shortDescription": {
                   "text": "Write access to referenced array value without 'unset'"
@@ -1578,6 +1545,39 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
+                      "index": 11,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpMissingDocCommentInspection",
+                "shortDescription": {
+                  "text": "Missing PHPDoc comment"
+                },
+                "fullDescription": {
+                  "text": "Reports non-fully typed elements without a PHPDoc comment or with a PHPDoc comment only containing the '@noinspection' tag. You can use the Enforce PHPDoc Comment inspection to report fully typed elements.",
+                  "markdown": "Reports non-fully typed elements without a PHPDoc comment or with a PHPDoc comment only containing the `@noinspection` tag.\n\nYou can use the *Enforce PHPDoc Comment* inspection to report fully typed elements."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpMissingDocCommentInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/PHPDoc/Code style",
                       "index": 12,
                       "toolComponent": {
                         "name": "QDPHP"
@@ -2205,7 +2205,7 @@
                   {
                     "target": {
                       "id": "PHP/PHPDoc/Code style",
-                      "index": 11,
+                      "index": 12,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -2634,7 +2634,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -3030,40 +3030,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
-                "id": "PhpUnitAssertCountInspection",
-                "shortDescription": {
-                  "text": "Usage 'assertCount/assertSameSize' methods instead of assertEquals"
-                },
-                "fullDescription": {
-                  "text": "Reports alternative usage of the 'assertEquals' and 'assertNotEquals' methods with 'count' function as a parameter See Usage of the assertCount for details. See Usage of the assertSameSize for details.",
-                  "markdown": "Reports alternative usage of the `assertEquals` and `assertNotEquals` methods with `count` function as a parameter\n\n\nSee [Usage of the assertCount](https://phpunit.readthedocs.io/en/stable/assertions.html#assertcount) for details.\n\n\nSee [Usage of the assertSameSize](https://hotexamples.com/examples/-/PHPUnit_Framework_Assert/assertSameSize/php-phpunit_framework_assert-assertsamesize-method-examples.html) for details."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpUnitAssertCountInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/PHPUnit",
-                      "index": 20,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -3097,6 +3064,39 @@
                     "target": {
                       "id": "PHP/Code smell",
                       "index": 1,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpUnitAssertCountInspection",
+                "shortDescription": {
+                  "text": "Usage 'assertCount/assertSameSize' methods instead of assertEquals"
+                },
+                "fullDescription": {
+                  "text": "Reports alternative usage of the 'assertEquals' and 'assertNotEquals' methods with 'count' function as a parameter See Usage of the assertCount for details. See Usage of the assertSameSize for details.",
+                  "markdown": "Reports alternative usage of the `assertEquals` and `assertNotEquals` methods with `count` function as a parameter\n\n\nSee [Usage of the assertCount](https://phpunit.readthedocs.io/en/stable/assertions.html#assertcount) for details.\n\n\nSee [Usage of the assertSameSize](https://hotexamples.com/examples/-/PHPUnit_Framework_Assert/assertSameSize/php-phpunit_framework_assert-assertsamesize-method-examples.html) for details."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpUnitAssertCountInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/PHPUnit",
+                      "index": 20,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -3273,39 +3273,6 @@
                 ]
               },
               {
-                "id": "PhpUsageOfSilenceOperatorInspection",
-                "shortDescription": {
-                  "text": "Usage of a silence operator"
-                },
-                "fullDescription": {
-                  "text": "Reports the usages of the silence operator ('@'), which is highly discouraged. See Error Control Operators (php.net) for details.",
-                  "markdown": "Reports the usages of the silence operator (`@`), which is highly discouraged.\n\nSee [Error Control Operators (php.net)](https://www.php.net/manual/en/language.operators.errorcontrol.php) for details."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpUsageOfSilenceOperatorInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpUndefinedVariableInspection",
                 "shortDescription": {
                   "text": "Undefined variable"
@@ -3328,6 +3295,39 @@
                     "target": {
                       "id": "PHP/Undefined symbols",
                       "index": 25,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpUsageOfSilenceOperatorInspection",
+                "shortDescription": {
+                  "text": "Usage of a silence operator"
+                },
+                "fullDescription": {
+                  "text": "Reports the usages of the silence operator ('@'), which is highly discouraged. See Error Control Operators (php.net) for details.",
+                  "markdown": "Reports the usages of the silence operator (`@`), which is highly discouraged.\n\nSee [Error Control Operators (php.net)](https://www.php.net/manual/en/language.operators.errorcontrol.php) for details."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpUsageOfSilenceOperatorInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Code smell",
+                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -3558,7 +3558,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -3756,7 +3756,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -4098,39 +4098,6 @@
                 ]
               },
               {
-                "id": "PhpToStringMayProduceExceptionInspection",
-                "shortDescription": {
-                  "text": "'__toString' may throw an exception"
-                },
-                "fullDescription": {
-                  "text": "Reports the usages of '__toString' that may throw an exception, which is not allowed for PHP language level lower than 7.4.",
-                  "markdown": "Reports the usages of `__toString` that may throw an exception, which is not allowed for PHP language level lower than 7.4."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "warning",
-                  "parameters": {
-                    "suppressToolId": "PhpToStringMayProduceExceptionInspection",
-                    "ideaSeverity": "WARNING",
-                    "qodanaSeverity": "High"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpForeachArrayIsUsedAsValueInspection",
                 "shortDescription": {
                   "text": "Foreach array is used as value"
@@ -4153,6 +4120,39 @@
                     "target": {
                       "id": "PHP/Probable bugs",
                       "index": 9,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpToStringMayProduceExceptionInspection",
+                "shortDescription": {
+                  "text": "'__toString' may throw an exception"
+                },
+                "fullDescription": {
+                  "text": "Reports the usages of '__toString' that may throw an exception, which is not allowed for PHP language level lower than 7.4.",
+                  "markdown": "Reports the usages of `__toString` that may throw an exception, which is not allowed for PHP language level lower than 7.4."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "warning",
+                  "parameters": {
+                    "suppressToolId": "PhpToStringMayProduceExceptionInspection",
+                    "ideaSeverity": "WARNING",
+                    "qodanaSeverity": "High"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Code smell",
+                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -4449,7 +4449,7 @@
                   {
                     "target": {
                       "id": "PHP/PHPDoc/Code style",
-                      "index": 11,
+                      "index": 12,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -4647,7 +4647,7 @@
                   {
                     "target": {
                       "id": "PHP/PHPDoc/Code style",
-                      "index": 11,
+                      "index": 12,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -4845,7 +4845,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -5241,7 +5241,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -5385,39 +5385,6 @@
                 ]
               },
               {
-                "id": "PhpIncludeInspection",
-                "shortDescription": {
-                  "text": "Unresolved include"
-                },
-                "fullDescription": {
-                  "text": "Reports non-resolved 'include', 'include_once', 'require', and 'require_once' expressions.",
-                  "markdown": "Reports non-resolved `include`, `include_once`, `require`, and `require_once` expressions."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpIncludeInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/General",
-                      "index": 6,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpUnitUndefinedDataProviderInspection",
                 "shortDescription": {
                   "text": "Undefined PHPUnit data provider"
@@ -5440,6 +5407,39 @@
                     "target": {
                       "id": "PHP/PHPUnit",
                       "index": 20,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpIncludeInspection",
+                "shortDescription": {
+                  "text": "Unresolved include"
+                },
+                "fullDescription": {
+                  "text": "Reports non-resolved 'include', 'include_once', 'require', and 'require_once' expressions.",
+                  "markdown": "Reports non-resolved `include`, `include_once`, `require`, and `require_once` expressions."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpIncludeInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/General",
+                      "index": 6,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -5649,39 +5649,6 @@
                 ]
               },
               {
-                "id": "PhpArrayIsAlwaysEmptyInspection",
-                "shortDescription": {
-                  "text": "Array is always empty at the point of access"
-                },
-                "fullDescription": {
-                  "text": "Reports the iterated/accessed arrays that are known to be empty at the point of access.",
-                  "markdown": "Reports the iterated/accessed arrays that are known to be empty at the point of access."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpArrayIsAlwaysEmptyInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpIllegalArrayKeyTypeInspection",
                 "shortDescription": {
                   "text": "Illegal array key type"
@@ -5715,6 +5682,39 @@
                 ]
               },
               {
+                "id": "PhpArrayIsAlwaysEmptyInspection",
+                "shortDescription": {
+                  "text": "Array is always empty at the point of access"
+                },
+                "fullDescription": {
+                  "text": "Reports the iterated/accessed arrays that are known to be empty at the point of access.",
+                  "markdown": "Reports the iterated/accessed arrays that are known to be empty at the point of access."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpArrayIsAlwaysEmptyInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Code smell",
+                      "index": 1,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
                 "id": "PhpLoopNeverIteratesInspection",
                 "shortDescription": {
                   "text": "Loop does not iterate"
@@ -5736,7 +5736,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -5901,7 +5901,7 @@
                   {
                     "target": {
                       "id": "PHP/PHPDoc/Code style",
-                      "index": 11,
+                      "index": 12,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -6870,6 +6870,39 @@
                 ]
               },
               {
+                "id": "PhpDisabledQualityToolComposerInspection",
+                "shortDescription": {
+                  "text": "Quality tool inspection is disabled"
+                },
+                "fullDescription": {
+                  "text": "Highlights the quality tools' entries in composer.json in case the corresponding code inspections are disabled.",
+                  "markdown": "Highlights the quality tools' entries in *composer.json* in case the corresponding code inspections are disabled."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpDisabledQualityToolComposerInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Composer",
+                      "index": 38,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
                 "id": "PhpConcatenationWithEmptyStringCanBeInlinedInspection",
                 "shortDescription": {
                   "text": "Concatenation to empty string can be merged with assignment"
@@ -6903,19 +6936,19 @@
                 ]
               },
               {
-                "id": "PhpDisabledQualityToolComposerInspection",
+                "id": "PhpArrayIndexResetIsUnnecessaryInspection",
                 "shortDescription": {
-                  "text": "Quality tool inspection is disabled"
+                  "text": "Array internal pointer reset is unnecessary"
                 },
                 "fullDescription": {
-                  "text": "Highlights the quality tools' entries in composer.json in case the corresponding code inspections are disabled.",
-                  "markdown": "Highlights the quality tools' entries in *composer.json* in case the corresponding code inspections are disabled."
+                  "text": "Reports the 'reset($array)' calls on arrays whose internal pointer is already set on the first element. Such calls are redundant and can be safely removed. See reset (php.net) for details.",
+                  "markdown": "Reports the `reset($array)` calls on arrays whose internal pointer is already set on the first element. Such calls are redundant and can be safely removed.\n\n\nSee [reset (php.net)](https://www.php.net/manual/en/function.reset.php) for details."
                 },
                 "defaultConfiguration": {
                   "enabled": true,
                   "level": "note",
                   "parameters": {
-                    "suppressToolId": "PhpDisabledQualityToolComposerInspection",
+                    "suppressToolId": "PhpArrayIndexResetIsUnnecessaryInspection",
                     "ideaSeverity": "WEAK WARNING",
                     "qodanaSeverity": "Moderate"
                   }
@@ -6923,8 +6956,8 @@
                 "relationships": [
                   {
                     "target": {
-                      "id": "PHP/Composer",
-                      "index": 38,
+                      "id": "PHP/Code smell",
+                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -6991,39 +7024,6 @@
                     "target": {
                       "id": "PHP/Unused symbols",
                       "index": 37,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
-                "id": "PhpArrayIndexResetIsUnnecessaryInspection",
-                "shortDescription": {
-                  "text": "Array internal pointer reset is unnecessary"
-                },
-                "fullDescription": {
-                  "text": "Reports the 'reset($array)' calls on arrays whose internal pointer is already set on the first element. Such calls are redundant and can be safely removed. See reset (php.net) for details.",
-                  "markdown": "Reports the `reset($array)` calls on arrays whose internal pointer is already set on the first element. Such calls are redundant and can be safely removed.\n\n\nSee [reset (php.net)](https://www.php.net/manual/en/function.reset.php) for details."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpArrayIndexResetIsUnnecessaryInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -7320,40 +7320,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
-                "id": "PhpReturnValueOfMethodIsNeverUsedInspection",
-                "shortDescription": {
-                  "text": "Method's return value is never used"
-                },
-                "fullDescription": {
-                  "text": "Reports the private methods returning the values that are not used.",
-                  "markdown": "Reports the private methods returning the values that are not used."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpReturnValueOfMethodIsNeverUsedInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -7387,6 +7354,39 @@
                     "target": {
                       "id": "PHP/Attributes",
                       "index": 45,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpReturnValueOfMethodIsNeverUsedInspection",
+                "shortDescription": {
+                  "text": "Method's return value is never used"
+                },
+                "fullDescription": {
+                  "text": "Reports the private methods returning the values that are not used.",
+                  "markdown": "Reports the private methods returning the values that are not used."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpReturnValueOfMethodIsNeverUsedInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Code smell",
+                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -7737,7 +7737,7 @@
                   "markdown": "Reports coding style problems detected by PHP_CodeSniffer.\n\n\nThe inspection requires PHP_CodeSniffer to be properly installed and set up in the IDE under\n[Settings \\| PHP \\| Quality Tools \\| PHP_CodeSniffer](settings://settings.php.quality.tools?PHP_CodeSniffer).\n\n\nTo learn more about installing PHP_CodeSniffer, see [PHP_CodeSniffer installation (GitHub)](https://github.com/squizlabs/PHP_CodeSniffer#installation)."
                 },
                 "defaultConfiguration": {
-                  "enabled": false,
+                  "enabled": true,
                   "level": "note",
                   "parameters": {
                     "suppressToolId": "PhpCSValidationInspection",
@@ -8046,7 +8046,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -8124,19 +8124,19 @@
                 ]
               },
               {
-                "id": "PhpBooleanCanBeSimplifiedInspection",
+                "id": "PhpFuncGetArgCanBeReplacedWithParamInspection",
                 "shortDescription": {
-                  "text": "Boolean expression can be simplified"
+                  "text": "'func_get_arg()' call can be replaced with parameter access"
                 },
                 "fullDescription": {
-                  "text": "Reports the boolean expressions that contain the 'true' or 'false' literals and can be simplified.",
-                  "markdown": "Reports the boolean expressions that contain the `true` or `false` literals and can be simplified."
+                  "text": "Reports the 'func_get_arg()' calls that can be replaced with direct parameter access.",
+                  "markdown": "Reports the `func_get_arg()` calls that can be replaced with direct parameter access."
                 },
                 "defaultConfiguration": {
                   "enabled": true,
                   "level": "note",
                   "parameters": {
-                    "suppressToolId": "PhpBooleanCanBeSimplifiedInspection",
+                    "suppressToolId": "PhpFuncGetArgCanBeReplacedWithParamInspection",
                     "ideaSeverity": "WEAK WARNING",
                     "qodanaSeverity": "Moderate"
                   }
@@ -8157,19 +8157,19 @@
                 ]
               },
               {
-                "id": "PhpFuncGetArgCanBeReplacedWithParamInspection",
+                "id": "PhpBooleanCanBeSimplifiedInspection",
                 "shortDescription": {
-                  "text": "'func_get_arg()' call can be replaced with parameter access"
+                  "text": "Boolean expression can be simplified"
                 },
                 "fullDescription": {
-                  "text": "Reports the 'func_get_arg()' calls that can be replaced with direct parameter access.",
-                  "markdown": "Reports the `func_get_arg()` calls that can be replaced with direct parameter access."
+                  "text": "Reports the boolean expressions that contain the 'true' or 'false' literals and can be simplified.",
+                  "markdown": "Reports the boolean expressions that contain the `true` or `false` literals and can be simplified."
                 },
                 "defaultConfiguration": {
                   "enabled": true,
                   "level": "note",
                   "parameters": {
-                    "suppressToolId": "PhpFuncGetArgCanBeReplacedWithParamInspection",
+                    "suppressToolId": "PhpBooleanCanBeSimplifiedInspection",
                     "ideaSeverity": "WEAK WARNING",
                     "qodanaSeverity": "Moderate"
                   }
@@ -8784,39 +8784,6 @@
                 ]
               },
               {
-                "id": "PhpPregMatchRedundantClosureInspection",
-                "shortDescription": {
-                  "text": "Redundant closure '.*'"
-                },
-                "fullDescription": {
-                  "text": "Reports redundant leading and trailing '.*' in pattern for `preg_match` function.",
-                  "markdown": "Reports redundant leading and trailing '.\\*' in pattern for \\`preg_match\\` function."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpPregMatchRedundantClosureInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpStatementWithoutBracesInspection",
                 "shortDescription": {
                   "text": "Control statement body without braces"
@@ -8839,6 +8806,39 @@
                     "target": {
                       "id": "PHP/Code style",
                       "index": 3,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpPregMatchRedundantClosureInspection",
+                "shortDescription": {
+                  "text": "Redundant closure '.*'"
+                },
+                "fullDescription": {
+                  "text": "Reports redundant leading and trailing '.*' in pattern for `preg_match` function.",
+                  "markdown": "Reports redundant leading and trailing '.\\*' in pattern for \\`preg_match\\` function."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpPregMatchRedundantClosureInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Code smell",
+                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -9300,7 +9300,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -9432,7 +9432,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -9708,39 +9708,6 @@
                 ]
               },
               {
-                "id": "PhpContinueTargetingSwitchInspection",
-                "shortDescription": {
-                  "text": "'continue' is targeting 'switch' statement"
-                },
-                "fullDescription": {
-                  "text": "Reports the 'continue' statements that are targeting 'switch' statements. In PHP 7.3 and later, such usages are deprecated and will emit an 'E_WARNING', since they are most likely the result of a programming mistake. In PHP, such 'continue' statements are equivalent to 'break', that is, they end the execution of the current 'switch' structure. In other languages, such 'continue' statements behave as 'continue 2' in PHP, that is, they take the execution to a higher level control structure (for example, the next iteration of an outer loop). See continue (php.net), break (php.net), and switch (php.net) for details.",
-                  "markdown": "Reports the `continue` statements that are targeting `switch` statements. In PHP 7.3 and later, such usages are deprecated and will emit an `E_WARNING`, since they are most likely the result of a programming mistake.\n\n* In PHP, such `continue` statements are equivalent to `break`, that is, they end the execution of the current `switch` structure.\n* In other languages, such `continue` statements behave as `continue 2` in PHP, that is, they take the execution to a higher level control structure (for example, the next iteration of an outer loop).\n\n\nSee [continue (php.net)](https://www.php.net/manual/en/control-structures.continue.php), [break (php.net)](https://www.php.net/manual/en/control-structures.break.php), and [switch (php.net)](https://www.php.net/manual/en/control-structures.switch.php) for details."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpContinueTargetingSwitchInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpGetClassCanBeReplacedWithClassNameLiteralInspection",
                 "shortDescription": {
                   "text": "'get_class()' call can be replaced with '::class'"
@@ -9763,6 +9730,39 @@
                     "target": {
                       "id": "PHP/Code style",
                       "index": 3,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpContinueTargetingSwitchInspection",
+                "shortDescription": {
+                  "text": "'continue' is targeting 'switch' statement"
+                },
+                "fullDescription": {
+                  "text": "Reports the 'continue' statements that are targeting 'switch' statements. In PHP 7.3 and later, such usages are deprecated and will emit an 'E_WARNING', since they are most likely the result of a programming mistake. In PHP, such 'continue' statements are equivalent to 'break', that is, they end the execution of the current 'switch' structure. In other languages, such 'continue' statements behave as 'continue 2' in PHP, that is, they take the execution to a higher level control structure (for example, the next iteration of an outer loop). See continue (php.net), break (php.net), and switch (php.net) for details.",
+                  "markdown": "Reports the `continue` statements that are targeting `switch` statements. In PHP 7.3 and later, such usages are deprecated and will emit an `E_WARNING`, since they are most likely the result of a programming mistake.\n\n* In PHP, such `continue` statements are equivalent to `break`, that is, they end the execution of the current `switch` structure.\n* In other languages, such `continue` statements behave as `continue 2` in PHP, that is, they take the execution to a higher level control structure (for example, the next iteration of an outer loop).\n\n\nSee [continue (php.net)](https://www.php.net/manual/en/control-structures.continue.php), [break (php.net)](https://www.php.net/manual/en/control-structures.break.php), and [switch (php.net)](https://www.php.net/manual/en/control-structures.switch.php) for details."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpContinueTargetingSwitchInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Code smell",
+                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -11028,39 +11028,6 @@
                 ]
               },
               {
-                "id": "PhpAttributeCanBeAddedToOverriddenMemberInspection",
-                "shortDescription": {
-                  "text": "Attribute can be added to overriding member "
-                },
-                "fullDescription": {
-                  "text": "Reports the methods' and parameters' attributes that can be propagated to overriding methods/parameters. See Attributes (php.net) for details.",
-                  "markdown": "Reports the methods' and parameters' attributes that can be propagated to overriding methods/parameters.\n\n\nSee [Attributes (php.net)](https://wiki.php.net/rfc/attributes_v2) for details."
-                },
-                "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "PhpAttributeCanBeAddedToOverriddenMemberInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "PHP/Attributes",
-                      "index": 45,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "PhpRegExpRedundantModifierInspection",
                 "shortDescription": {
                   "text": "Redundant modifier"
@@ -11083,6 +11050,39 @@
                     "target": {
                       "id": "PHP/Regular expressions",
                       "index": 68,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "PhpAttributeCanBeAddedToOverriddenMemberInspection",
+                "shortDescription": {
+                  "text": "Attribute can be added to overriding member "
+                },
+                "fullDescription": {
+                  "text": "Reports the methods' and parameters' attributes that can be propagated to overriding methods/parameters. See Attributes (php.net) for details.",
+                  "markdown": "Reports the methods' and parameters' attributes that can be propagated to overriding methods/parameters.\n\n\nSee [Attributes (php.net)](https://wiki.php.net/rfc/attributes_v2) for details."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "PhpAttributeCanBeAddedToOverriddenMemberInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "PHP/Attributes",
+                      "index": 45,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -11280,7 +11280,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -12072,7 +12072,7 @@
                   {
                     "target": {
                       "id": "PHP/Control flow",
-                      "index": 12,
+                      "index": 11,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -12381,28 +12381,28 @@
                 ]
               },
               {
-                "id": "PhpWrongForeachArgumentTypeInspection",
+                "id": "PhpTooManyParametersInspection",
                 "shortDescription": {
-                  "text": "Invalid argument supplied for 'foreach()'"
+                  "text": "Too many parameters in function declaration"
                 },
                 "fullDescription": {
-                  "text": "Reports the 'foreach' constructs used on variables of the 'string', 'float', 'int', or 'boolean' type. See foreach (php.net) for details.",
-                  "markdown": "Reports the `foreach` constructs used on variables of the `string`, `float`, `int`, or `boolean` type.\n\n\nSee [foreach (php.net)](http://www.php.net/manual/en/control-structures.foreach.php) for details."
+                  "text": "Reports the function/method declarations with the number of parameters exceeding the specified limit.",
+                  "markdown": "Reports the function/method declarations with the number of parameters exceeding the specified limit."
                 },
                 "defaultConfiguration": {
-                  "enabled": true,
-                  "level": "warning",
+                  "enabled": false,
+                  "level": "note",
                   "parameters": {
-                    "suppressToolId": "PhpWrongForeachArgumentTypeInspection",
-                    "ideaSeverity": "WARNING",
-                    "qodanaSeverity": "High"
+                    "suppressToolId": "PhpTooManyParametersInspection",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
                   }
                 },
                 "relationships": [
                   {
                     "target": {
-                      "id": "PHP/Type compatibility",
-                      "index": 23,
+                      "id": "PHP/Code smell",
+                      "index": 1,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -12447,28 +12447,28 @@
                 ]
               },
               {
-                "id": "PhpTooManyParametersInspection",
+                "id": "PhpWrongForeachArgumentTypeInspection",
                 "shortDescription": {
-                  "text": "Too many parameters in function declaration"
+                  "text": "Invalid argument supplied for 'foreach()'"
                 },
                 "fullDescription": {
-                  "text": "Reports the function/method declarations with the number of parameters exceeding the specified limit.",
-                  "markdown": "Reports the function/method declarations with the number of parameters exceeding the specified limit."
+                  "text": "Reports the 'foreach' constructs used on variables of the 'string', 'float', 'int', or 'boolean' type. See foreach (php.net) for details.",
+                  "markdown": "Reports the `foreach` constructs used on variables of the `string`, `float`, `int`, or `boolean` type.\n\n\nSee [foreach (php.net)](http://www.php.net/manual/en/control-structures.foreach.php) for details."
                 },
                 "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "note",
+                  "enabled": true,
+                  "level": "warning",
                   "parameters": {
-                    "suppressToolId": "PhpTooManyParametersInspection",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
+                    "suppressToolId": "PhpWrongForeachArgumentTypeInspection",
+                    "ideaSeverity": "WARNING",
+                    "qodanaSeverity": "High"
                   }
                 },
                 "relationships": [
                   {
                     "target": {
-                      "id": "PHP/Code smell",
-                      "index": 1,
+                      "id": "PHP/Type compatibility",
+                      "index": 23,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -16962,39 +16962,6 @@
                 ]
               },
               {
-                "id": "XmlDeprecatedElement",
-                "shortDescription": {
-                  "text": "Deprecated symbol"
-                },
-                "fullDescription": {
-                  "text": "Reports a deprecated XML element or attribute. Symbols can be marked by XML comment or documentation tag with text 'deprecated'.",
-                  "markdown": "Reports a deprecated XML element or attribute.\n\nSymbols can be marked by XML comment or documentation tag with text 'deprecated'."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "warning",
-                  "parameters": {
-                    "suppressToolId": "XmlDeprecatedElement",
-                    "ideaSeverity": "WARNING",
-                    "qodanaSeverity": "High"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "XML",
-                      "index": 40,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "RegExpRedundantNestedCharacterClass",
                 "shortDescription": {
                   "text": "Redundant nested character class"
@@ -17017,6 +16984,39 @@
                     "target": {
                       "id": "RegExp",
                       "index": 46,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "XmlDeprecatedElement",
+                "shortDescription": {
+                  "text": "Deprecated symbol"
+                },
+                "fullDescription": {
+                  "text": "Reports a deprecated XML element or attribute. Symbols can be marked by XML comment or documentation tag with text 'deprecated'.",
+                  "markdown": "Reports a deprecated XML element or attribute.\n\nSymbols can be marked by XML comment or documentation tag with text 'deprecated'."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "warning",
+                  "parameters": {
+                    "suppressToolId": "XmlDeprecatedElement",
+                    "ideaSeverity": "WARNING",
+                    "qodanaSeverity": "High"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "XML",
+                      "index": 40,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -17127,19 +17127,19 @@
                 ]
               },
               {
-                "id": "RegExpRepeatedSpace",
+                "id": "RegExpDuplicateAlternationBranch",
                 "shortDescription": {
-                  "text": "Consecutive spaces"
+                  "text": "Duplicate branch in alternation"
                 },
                 "fullDescription": {
-                  "text": "Reports multiple consecutive spaces in a RegExp. Because spaces are not visible by default, it can be hard to see how many spaces are required. The RegExp can be made more clear by replacing the consecutive spaces with a single space and a counted quantifier. Example: '(     )' After the quick-fix is applied: '( {5})' New in 2017.1",
-                  "markdown": "Reports multiple consecutive spaces in a RegExp. Because spaces are not visible by default, it can be hard to see how many spaces are required. The RegExp can be made more clear by replacing the consecutive spaces with a single space and a counted quantifier.\n\n**Example:**\n\n\n      (     )\n\nAfter the quick-fix is applied:\n\n\n      ( {5})\n\n\nNew in 2017.1"
+                  "text": "Reports duplicate branches in a RegExp alternation. Duplicate branches slow down matching and obscure the intent of the expression. Example: '(alpha|bravo|charlie|alpha)' After the quick-fix is applied: '(alpha|bravo|charlie)' New in 2017.1",
+                  "markdown": "Reports duplicate branches in a RegExp alternation. Duplicate branches slow down matching and obscure the intent of the expression.\n\n**Example:**\n\n\n      (alpha|bravo|charlie|alpha)\n\nAfter the quick-fix is applied:\n\n\n      (alpha|bravo|charlie)\n\nNew in 2017.1"
                 },
                 "defaultConfiguration": {
                   "enabled": true,
                   "level": "warning",
                   "parameters": {
-                    "suppressToolId": "RegExpRepeatedSpace",
+                    "suppressToolId": "RegExpDuplicateAlternationBranch",
                     "ideaSeverity": "WARNING",
                     "qodanaSeverity": "High"
                   }
@@ -17160,19 +17160,19 @@
                 ]
               },
               {
-                "id": "RegExpDuplicateAlternationBranch",
+                "id": "RegExpRepeatedSpace",
                 "shortDescription": {
-                  "text": "Duplicate branch in alternation"
+                  "text": "Consecutive spaces"
                 },
                 "fullDescription": {
-                  "text": "Reports duplicate branches in a RegExp alternation. Duplicate branches slow down matching and obscure the intent of the expression. Example: '(alpha|bravo|charlie|alpha)' After the quick-fix is applied: '(alpha|bravo|charlie)' New in 2017.1",
-                  "markdown": "Reports duplicate branches in a RegExp alternation. Duplicate branches slow down matching and obscure the intent of the expression.\n\n**Example:**\n\n\n      (alpha|bravo|charlie|alpha)\n\nAfter the quick-fix is applied:\n\n\n      (alpha|bravo|charlie)\n\nNew in 2017.1"
+                  "text": "Reports multiple consecutive spaces in a RegExp. Because spaces are not visible by default, it can be hard to see how many spaces are required. The RegExp can be made more clear by replacing the consecutive spaces with a single space and a counted quantifier. Example: '(     )' After the quick-fix is applied: '( {5})' New in 2017.1",
+                  "markdown": "Reports multiple consecutive spaces in a RegExp. Because spaces are not visible by default, it can be hard to see how many spaces are required. The RegExp can be made more clear by replacing the consecutive spaces with a single space and a counted quantifier.\n\n**Example:**\n\n\n      (     )\n\nAfter the quick-fix is applied:\n\n\n      ( {5})\n\n\nNew in 2017.1"
                 },
                 "defaultConfiguration": {
                   "enabled": true,
                   "level": "warning",
                   "parameters": {
-                    "suppressToolId": "RegExpDuplicateAlternationBranch",
+                    "suppressToolId": "RegExpRepeatedSpace",
                     "ideaSeverity": "WARNING",
                     "qodanaSeverity": "High"
                   }
@@ -19032,39 +19032,6 @@
                 ]
               },
               {
-                "id": "EmptyTryBlockJS",
-                "shortDescription": {
-                  "text": "Empty 'try' block"
-                },
-                "fullDescription": {
-                  "text": "Reports an empty 'try' block, which usually indicates an error.",
-                  "markdown": "Reports an empty `try` block, which usually indicates an error."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "warning",
-                  "parameters": {
-                    "suppressToolId": "EmptyTryBlockJS",
-                    "ideaSeverity": "WARNING",
-                    "qodanaSeverity": "High"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "JavaScript and TypeScript/Try statement issues",
-                      "index": 35,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "ES6ClassMemberInitializationOrder",
                 "shortDescription": {
                   "text": "Use of possibly unassigned property in a static initializer"
@@ -19087,6 +19054,39 @@
                     "target": {
                       "id": "JavaScript and TypeScript/General",
                       "index": 24,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "EmptyTryBlockJS",
+                "shortDescription": {
+                  "text": "Empty 'try' block"
+                },
+                "fullDescription": {
+                  "text": "Reports an empty 'try' block, which usually indicates an error.",
+                  "markdown": "Reports an empty `try` block, which usually indicates an error."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "warning",
+                  "parameters": {
+                    "suppressToolId": "EmptyTryBlockJS",
+                    "ideaSeverity": "WARNING",
+                    "qodanaSeverity": "High"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "JavaScript and TypeScript/Try statement issues",
+                      "index": 35,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -20517,39 +20517,6 @@
                 ]
               },
               {
-                "id": "TypeScriptDuplicateUnionOrIntersectionType",
-                "shortDescription": {
-                  "text": "Duplicate union or intersection type component"
-                },
-                "fullDescription": {
-                  "text": "Reports a duplicate type inside a union or intersection.",
-                  "markdown": "Reports a duplicate type inside a union or intersection."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "warning",
-                  "parameters": {
-                    "suppressToolId": "TypeScriptDuplicateUnionOrIntersectionType",
-                    "ideaSeverity": "WARNING",
-                    "qodanaSeverity": "High"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "JavaScript and TypeScript/TypeScript",
-                      "index": 52,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "TrivialConditionalJS",
                 "shortDescription": {
                   "text": "Redundant conditional expression"
@@ -20572,6 +20539,39 @@
                     "target": {
                       "id": "JavaScript and TypeScript/Control flow issues",
                       "index": 39,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "TypeScriptDuplicateUnionOrIntersectionType",
+                "shortDescription": {
+                  "text": "Duplicate union or intersection type component"
+                },
+                "fullDescription": {
+                  "text": "Reports a duplicate type inside a union or intersection.",
+                  "markdown": "Reports a duplicate type inside a union or intersection."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "warning",
+                  "parameters": {
+                    "suppressToolId": "TypeScriptDuplicateUnionOrIntersectionType",
+                    "ideaSeverity": "WARNING",
+                    "qodanaSeverity": "High"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "JavaScript and TypeScript/TypeScript",
+                      "index": 52,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -20913,39 +20913,6 @@
                 ]
               },
               {
-                "id": "IfStatementWithTooManyBranchesJS",
-                "shortDescription": {
-                  "text": "'if' statement with too many branches"
-                },
-                "fullDescription": {
-                  "text": "Reports an 'if' statement with too many branches. Such statements may be confusing, and often indicate inadequate levels of design abstraction. Use the field below to specify the maximum number of branches expected.",
-                  "markdown": "Reports an `if` statement with too many branches. Such statements may be confusing, and often indicate inadequate levels of design abstraction.\n\n\nUse the field below to specify the maximum number of branches expected."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "warning",
-                  "parameters": {
-                    "suppressToolId": "IfStatementWithTooManyBranchesJS",
-                    "ideaSeverity": "WARNING",
-                    "qodanaSeverity": "High"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "JavaScript and TypeScript/Control flow issues",
-                      "index": 39,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "JSValidateJSDoc",
                 "shortDescription": {
                   "text": "Syntax errors and unresolved references in JSDoc"
@@ -20968,6 +20935,39 @@
                     "target": {
                       "id": "JavaScript and TypeScript/General",
                       "index": 24,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "IfStatementWithTooManyBranchesJS",
+                "shortDescription": {
+                  "text": "'if' statement with too many branches"
+                },
+                "fullDescription": {
+                  "text": "Reports an 'if' statement with too many branches. Such statements may be confusing, and often indicate inadequate levels of design abstraction. Use the field below to specify the maximum number of branches expected.",
+                  "markdown": "Reports an `if` statement with too many branches. Such statements may be confusing, and often indicate inadequate levels of design abstraction.\n\n\nUse the field below to specify the maximum number of branches expected."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "warning",
+                  "parameters": {
+                    "suppressToolId": "IfStatementWithTooManyBranchesJS",
+                    "ideaSeverity": "WARNING",
+                    "qodanaSeverity": "High"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "JavaScript and TypeScript/Control flow issues",
+                      "index": 39,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -21342,39 +21342,6 @@
                 ]
               },
               {
-                "id": "TypeScriptMissingConfigOption",
-                "shortDescription": {
-                  "text": "Missing tsconfig.json option "
-                },
-                "fullDescription": {
-                  "text": "Reports a usage that requires an explicit option in 'tsconfig.json'. For example, to use JSX in '.tsx' files, 'tsconfig.json' must contain '\"jsx\"' property.",
-                  "markdown": "Reports a usage that requires an explicit option in `tsconfig.json`. For example, to use JSX in `.tsx` files, `tsconfig.json` must contain `\"jsx\"` property."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "warning",
-                  "parameters": {
-                    "suppressToolId": "TypeScriptMissingConfigOption",
-                    "ideaSeverity": "WARNING",
-                    "qodanaSeverity": "High"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "JavaScript and TypeScript/TypeScript",
-                      "index": 52,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "JSObjectNullOrUndefined",
                 "shortDescription": {
                   "text": "Object is 'null' or 'undefined'"
@@ -21397,6 +21364,39 @@
                     "target": {
                       "id": "JavaScript and TypeScript/Control flow issues",
                       "index": 39,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "TypeScriptMissingConfigOption",
+                "shortDescription": {
+                  "text": "Missing tsconfig.json option "
+                },
+                "fullDescription": {
+                  "text": "Reports a usage that requires an explicit option in 'tsconfig.json'. For example, to use JSX in '.tsx' files, 'tsconfig.json' must contain '\"jsx\"' property.",
+                  "markdown": "Reports a usage that requires an explicit option in `tsconfig.json`. For example, to use JSX in `.tsx` files, `tsconfig.json` must contain `\"jsx\"` property."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "warning",
+                  "parameters": {
+                    "suppressToolId": "TypeScriptMissingConfigOption",
+                    "ideaSeverity": "WARNING",
+                    "qodanaSeverity": "High"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "JavaScript and TypeScript/TypeScript",
+                      "index": 52,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -22068,39 +22068,6 @@
                 ]
               },
               {
-                "id": "NpmUsedModulesInstalled",
-                "shortDescription": {
-                  "text": "Missing module dependency"
-                },
-                "fullDescription": {
-                  "text": "Reports a module from a 'require()' call or an 'import' statement that is not installed or is not listed in package.json dependencies. Suggests installing the module and/or including it into package.json. For 'require()' calls, works only in the files from the scope of Node.js Core JavaScript library.",
-                  "markdown": "Reports a module from a `require()` call or an `import` statement that is not installed or is not listed in package.json dependencies.\n\nSuggests installing the module and/or including it into package.json.\n\nFor `require()` calls, works only in the files from the scope of *Node.js Core* JavaScript library."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "NpmUsedModulesInstalled",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "JavaScript and TypeScript/Imports and dependencies",
-                      "index": 59,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "UnusedCatchParameterJS",
                 "shortDescription": {
                   "text": "Unused 'catch' parameter"
@@ -22123,6 +22090,39 @@
                     "target": {
                       "id": "JavaScript and TypeScript/Try statement issues",
                       "index": 35,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "NpmUsedModulesInstalled",
+                "shortDescription": {
+                  "text": "Missing module dependency"
+                },
+                "fullDescription": {
+                  "text": "Reports a module from a 'require()' call or an 'import' statement that is not installed or is not listed in package.json dependencies. Suggests installing the module and/or including it into package.json. For 'require()' calls, works only in the files from the scope of Node.js Core JavaScript library.",
+                  "markdown": "Reports a module from a `require()` call or an `import` statement that is not installed or is not listed in package.json dependencies.\n\nSuggests installing the module and/or including it into package.json.\n\nFor `require()` calls, works only in the files from the scope of *Node.js Core* JavaScript library."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "NpmUsedModulesInstalled",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "JavaScript and TypeScript/Imports and dependencies",
+                      "index": 59,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -23091,6 +23091,39 @@
                 ]
               },
               {
+                "id": "JSIncompatibleTypesComparison",
+                "shortDescription": {
+                  "text": "Comparison of expressions having incompatible types"
+                },
+                "fullDescription": {
+                  "text": "Reports a comparison with operands of incompatible types or an operand with a type without possible common values.",
+                  "markdown": "Reports a comparison with operands of incompatible types or an operand with a type without possible common values."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "note",
+                  "parameters": {
+                    "suppressToolId": "JSIncompatibleTypesComparison",
+                    "ideaSeverity": "WEAK WARNING",
+                    "qodanaSeverity": "Moderate"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "JavaScript and TypeScript/Probable bugs",
+                      "index": 44,
+                      "toolComponent": {
+                        "name": "QDPHP"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              },
+              {
                 "id": "JSUnfilteredForInLoop",
                 "shortDescription": {
                   "text": "Unfiltered for..in loop"
@@ -23146,39 +23179,6 @@
                     "target": {
                       "id": "JavaScript and TypeScript/General",
                       "index": 24,
-                      "toolComponent": {
-                        "name": "QDPHP"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
-                  }
-                ]
-              },
-              {
-                "id": "JSIncompatibleTypesComparison",
-                "shortDescription": {
-                  "text": "Comparison of expressions having incompatible types"
-                },
-                "fullDescription": {
-                  "text": "Reports a comparison with operands of incompatible types or an operand with a type without possible common values.",
-                  "markdown": "Reports a comparison with operands of incompatible types or an operand with a type without possible common values."
-                },
-                "defaultConfiguration": {
-                  "enabled": false,
-                  "level": "note",
-                  "parameters": {
-                    "suppressToolId": "JSIncompatibleTypesComparison",
-                    "ideaSeverity": "WEAK WARNING",
-                    "qodanaSeverity": "Moderate"
-                  }
-                },
-                "relationships": [
-                  {
-                    "target": {
-                      "id": "JavaScript and TypeScript/Probable bugs",
-                      "index": 44,
                       "toolComponent": {
                         "name": "QDPHP"
                       }
@@ -27996,7 +27996,7 @@
                   "markdown": "Runs Psalm to find code problems.   \n\nThe inspection requires Psalm to be properly installed and set up in the IDE under [Settings \\| PHP \\| Quality Tools \\| Psalm](settings://settings.php.quality.tools?Psalm).\n\nTo learn more about installing Psalm, see:\n<https://psalm.dev/docs/running_psalm/installation/>"
                 },
                 "defaultConfiguration": {
-                  "enabled": false,
+                  "enabled": true,
                   "level": "note",
                   "parameters": {
                     "suppressToolId": "PsalmGlobal",
@@ -28721,7 +28721,7 @@
       },
       "invocations": [
         {
-          "startTimeUtc": "2024-01-17T14:25:29.919698588Z",
+          "startTimeUtc": "2024-01-17T16:42:48.245361567Z",
           "exitCode": 0,
           "toolExecutionNotifications": [
             {
@@ -28729,7 +28729,7 @@
                 "text": "Reporting from [] 'sanity' inspections was suspended due to high problems count."
               },
               "level": "error",
-              "timeUtc": "2024-01-17T14:25:33.917542379Z",
+              "timeUtc": "2024-01-17T16:42:58.690791998Z",
               "properties": {
                 "qodanaKind": "sanityFailure"
               }
@@ -28741,1289 +28741,23 @@
       "language": "en-US",
       "versionControlProvenance": [
         {
-          "repositoryUri": "https://github.com/niden/proxy-psr16.git",
-          "revisionId": "61e8132cd0ccb990647e1feb0edaa2da980ebfd2",
-          "branch": "refs/heads/master",
+          "repositoryUri": "https://github.com/niden/proxy-psr16",
+          "revisionId": "b5582328756ab4927f28a9d416933a416da220e6",
+          "branch": "master",
           "properties": {
-            "repoUrl": "https://github.com/niden/proxy-psr16.git",
+            "repoUrl": "https://github.com/niden/proxy-psr16",
             "lastAuthorName": "Nikolaos Dimopoulos",
             "vcsType": "Git",
             "lastAuthorEmail": "nikos@niden.net"
           }
         }
       ],
-      "results": [
-        {
-          "ruleId": "PhpCastIsUnnecessaryInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Type cast is redundant",
-            "markdown": "Type cast is redundant"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 86,
-                  "startColumn": 29,
-                  "charOffset": 2533,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "(string)"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 84,
-                  "startColumn": 1,
-                  "charOffset": 2432,
-                  "charLength": 133,
-                  "snippet": {
-                    "text": "    public function get(string $key, mixed $default = null): mixed\n    {\n        return $this->doGet((string) $key, $default);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "03fa95fe53460c186ce4498846d7c470b939b4e7bad9697db39633dec462bb11"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpCastIsUnnecessaryInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Type cast is redundant",
-            "markdown": "Type cast is redundant"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 120,
-                  "startColumn": 29,
-                  "charOffset": 3746,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "(string)"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 118,
-                  "startColumn": 1,
-                  "charOffset": 3669,
-                  "charLength": 99,
-                  "snippet": {
-                    "text": "    public function has(string $key): bool\n    {\n        return $this->doHas((string) $key);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "adca486b392740aa249de9f47c8d050463828cf7d72887e236c935da6e7ca8ea"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpCastIsUnnecessaryInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Type cast is redundant",
-            "markdown": "Type cast is redundant"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 32,
-                  "charOffset": 1343,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "(string)"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 50,
-                  "startColumn": 1,
-                  "charOffset": 1260,
-                  "charLength": 105,
-                  "snippet": {
-                    "text": "    public function delete(string $key): bool\n    {\n        return $this->doDelete((string) $key);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "dfe1b5361e56cc147a96acaed27ab986b15ddb607a13c8bbe7bbb04d4f6e1e47"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDisabledQualityToolComposerInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "PHPStan inspection is disabled",
-            "markdown": "PHPStan inspection is disabled"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "composer.json",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 35,
-                  "startColumn": 9,
-                  "charOffset": 1011,
-                  "charLength": 17,
-                  "snippet": {
-                    "text": "\"phpstan/phpstan\""
-                  },
-                  "sourceLanguage": "JSON"
-                },
-                "contextRegion": {
-                  "startLine": 33,
-                  "startColumn": 1,
-                  "charOffset": 934,
-                  "charLength": 184,
-                  "snippet": {
-                    "text": "        \"pds/skeleton\": \"^1.0\",\n        \"phalcon/ide-stubs\": \"^5.6\",\n        \"phpstan/phpstan\": \"^1.10\",\n        \"phpunit/phpunit\": \"^9.6\",\n        \"squizlabs/php_codesniffer\": \"^3.8\","
-                  },
-                  "sourceLanguage": "JSON"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "b2b237a927f3fb77285032821f6fb11fcb0e55ca4967d9dfee95d6a1aed2063d"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "JSON"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocMissingThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "PHPDoc comment doesn't contain all the necessary @throws tags",
-            "markdown": "PHPDoc comment doesn't contain all the necessary @throws tags"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 138,
-                  "startColumn": 8,
-                  "charOffset": 4579,
-                  "charLength": 73,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is not"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 136,
-                  "startColumn": 1,
-                  "charOffset": 4507,
-                  "charLength": 175,
-                  "snippet": {
-                    "text": "     * @return bool True on success and false on failure.\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is not\n     * a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "2e8db76d3be3c91fdfbfb314fe291a0d3e39e703fc1f8e7c75542e348571643b"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocMissingThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "PHPDoc comment doesn't contain all the necessary @throws tags",
-            "markdown": "PHPDoc comment doesn't contain all the necessary @throws tags"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 81,
-                  "startColumn": 8,
-                  "charOffset": 2328,
-                  "charLength": 69,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 79,
-                  "startColumn": 1,
-                  "charOffset": 2292,
-                  "charLength": 139,
-                  "snippet": {
-                    "text": "     * of cache miss.\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is\n     * not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "4f7e9935ca4ff9c7ac44727fcc46dcb9831cc92cb5e14209e014cf6dabd8b758"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocMissingThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "PHPDoc comment doesn't contain all the necessary @throws tags",
-            "markdown": "PHPDoc comment doesn't contain all the necessary @throws tags"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 115,
-                  "startColumn": 8,
-                  "charOffset": 3565,
-                  "charLength": 69,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 113,
-                  "startColumn": 1,
-                  "charOffset": 3531,
-                  "charLength": 137,
-                  "snippet": {
-                    "text": "     * @return bool\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is\n     * not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "7bfb40743c6a272a3042b48f247f31d4681a85afb4210b1422f9800207b1378b"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocMissingThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "PHPDoc comment doesn't contain all the necessary @throws tags",
-            "markdown": "PHPDoc comment doesn't contain all the necessary @throws tags"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 47,
-                  "startColumn": 8,
-                  "charOffset": 1123,
-                  "charLength": 69,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 45,
-                  "startColumn": 1,
-                  "charOffset": 1075,
-                  "charLength": 184,
-                  "snippet": {
-                    "text": "     *              was an error.\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is\n     *                                  not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "8a04c3611321d246bf504a80e6940b64ce8b011b9f452729d3405e6ed2cb8dbe"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocRedundantThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Exception 'InvalidArgumentException' is never thrown in the function",
-            "markdown": "Exception 'InvalidArgumentException' is never thrown in the function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 100,
-                  "startColumn": 8,
-                  "charOffset": 3102,
-                  "charLength": 70,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if $keys is neither an"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 98,
-                  "startColumn": 1,
-                  "charOffset": 3016,
-                  "charLength": 242,
-                  "snippet": {
-                    "text": "     * keys that do not exist or are stale will have $default as value.\n     *\n     * @throws InvalidArgumentException MUST be thrown if $keys is neither an\n     * array nor a Traversable, or if any of the $keys are not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "22f9f179234db7e747fa1d94836589d5b0edb0eabc942420c666a793389ab01f"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocRedundantThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Exception 'InvalidArgumentException' is never thrown in the function",
-            "markdown": "Exception 'InvalidArgumentException' is never thrown in the function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 47,
-                  "startColumn": 8,
-                  "charOffset": 1123,
-                  "charLength": 69,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 45,
-                  "startColumn": 1,
-                  "charOffset": 1075,
-                  "charLength": 184,
-                  "snippet": {
-                    "text": "     *              was an error.\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is\n     *                                  not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "41d718b3df4abd20091c8a2cab37b96421b797aef713193f1789534574eb0bcf"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocRedundantThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Exception 'InvalidArgumentException' is never thrown in the function",
-            "markdown": "Exception 'InvalidArgumentException' is never thrown in the function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 160,
-                  "startColumn": 8,
-                  "charOffset": 5585,
-                  "charLength": 72,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if $values is neither an"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 158,
-                  "startColumn": 1,
-                  "charOffset": 5513,
-                  "charLength": 232,
-                  "snippet": {
-                    "text": "     * @return bool True on success and false on failure.\n     *\n     * @throws InvalidArgumentException MUST be thrown if $values is neither an\n     * array nor a Traversable, or if any of the $values are not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "533e09571c556b6f0b7ee7e3a46d5db7d5f9c7bc09bffb3afbaa8f463cc26b2f"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocRedundantThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Exception 'InvalidArgumentException' is never thrown in the function",
-            "markdown": "Exception 'InvalidArgumentException' is never thrown in the function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 81,
-                  "startColumn": 8,
-                  "charOffset": 2328,
-                  "charLength": 69,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 79,
-                  "startColumn": 1,
-                  "charOffset": 2292,
-                  "charLength": 139,
-                  "snippet": {
-                    "text": "     * of cache miss.\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is\n     * not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "79b79469658f4d8dc04600eb4d14ada8e1514895f5e3729573a7d0020fc29a9e"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocRedundantThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Exception 'InvalidArgumentException' is never thrown in the function",
-            "markdown": "Exception 'InvalidArgumentException' is never thrown in the function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 63,
-                  "startColumn": 8,
-                  "charOffset": 1661,
-                  "charLength": 70,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if $keys is neither an"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 61,
-                  "startColumn": 1,
-                  "charOffset": 1613,
-                  "charLength": 269,
-                  "snippet": {
-                    "text": "     *              was an error.\n     *\n     * @throws InvalidArgumentException MUST be thrown if $keys is neither an\n     *                                  array nor a Traversable, or if any of\n     *                                  the $keys are not a legal value."
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "a1aee4c13a402dd93a9b360347222c8cbf1d526ca5255c23dd57f87b883f50e1"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocRedundantThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Exception 'InvalidArgumentException' is never thrown in the function",
-            "markdown": "Exception 'InvalidArgumentException' is never thrown in the function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 115,
-                  "startColumn": 8,
-                  "charOffset": 3565,
-                  "charLength": 69,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 113,
-                  "startColumn": 1,
-                  "charOffset": 3531,
-                  "charLength": 137,
-                  "snippet": {
-                    "text": "     * @return bool\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is\n     * not a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "effa121a5d3e72634acc0d8ae5b984adc85ff4a3835842b8c4259814a7d4f887"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpDocRedundantThrowsInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Exception 'InvalidArgumentException' is never thrown in the function",
-            "markdown": "Exception 'InvalidArgumentException' is never thrown in the function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 138,
-                  "startColumn": 8,
-                  "charOffset": 4579,
-                  "charLength": 73,
-                  "snippet": {
-                    "text": "@throws InvalidArgumentException MUST be thrown if the $key string is not"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 136,
-                  "startColumn": 1,
-                  "charOffset": 4507,
-                  "charLength": 175,
-                  "snippet": {
-                    "text": "     * @return bool True on success and false on failure.\n     *\n     * @throws InvalidArgumentException MUST be thrown if the $key string is not\n     * a legal value.\n     */"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "f7d882c0c7ac8c22ca8da0ba05d4207f0a9e113177ea0e47f9c04b5e7c5514c9"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpFullyQualifiedNameUsageInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Qualifier can be replaced with an import",
-            "markdown": "Qualifier can be replaced with an import"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/InvalidArgumentException.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 21,
-                  "startColumn": 40,
-                  "charOffset": 491,
-                  "charLength": 1,
-                  "snippet": {
-                    "text": "\\"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 19,
-                  "startColumn": 1,
-                  "charOffset": 378,
-                  "charLength": 166,
-                  "snippet": {
-                    "text": " * Exceptions thrown in Phalcon\\Proxy\\Psr16\\Cache will use this class\n */\nclass InvalidArgumentException extends \\Exception implements PsrInvalidArgumentException\n{\n}"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "72c7103f7b3ee0fbb542105acc744c2acc929a38f5ce4b8f6e76812c5f1218c9"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpParameterNameChangedDuringInheritanceInspection",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Parameter's name changed from 'defaultValue' to 'default'",
-            "markdown": "Parameter's name changed from 'defaultValue' to 'default'"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 84,
-                  "startColumn": 44,
-                  "charOffset": 2475,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "$default"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 82,
-                  "startColumn": 1,
-                  "charOffset": 2398,
-                  "charLength": 160,
-                  "snippet": {
-                    "text": "     * not a legal value.\n     */\n    public function get(string $key, mixed $default = null): mixed\n    {\n        return $this->doGet((string) $key, $default);"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "3b95a4b81815da03cfdb91c2f2679e5f1a3926d00621e34777655f7edd7d4889"
-          },
-          "properties": {
-            "ideaSeverity": "WARNING",
-            "qodanaSeverity": "High",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpParameterNameChangedDuringInheritanceInspection",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Parameter's name changed from 'defaultValue' to 'default'",
-            "markdown": "Parameter's name changed from 'defaultValue' to 'default'"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 103,
-                  "startColumn": 52,
-                  "charOffset": 3310,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "$default"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 101,
-                  "startColumn": 1,
-                  "charOffset": 3173,
-                  "charLength": 223,
-                  "snippet": {
-                    "text": "     * array nor a Traversable, or if any of the $keys are not a legal value.\n     */\n    public function getMultiple(mixed $keys, mixed $default = null): iterable\n    {\n        return $this->doGetMultiple($keys, $default);"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "ed1d89f632651fa66b62d6bc639878afc8a265c1a1727df42661942acf0ae387"
-          },
-          "properties": {
-            "ideaSeverity": "WARNING",
-            "qodanaSeverity": "High",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpUnhandledExceptionInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Unhandled exceptions",
-            "markdown": "Unhandled exceptions"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 143,
-                  "startColumn": 23,
-                  "charOffset": 4787,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "doSet"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 141,
-                  "startColumn": 1,
-                  "charOffset": 4683,
-                  "charLength": 137,
-                  "snippet": {
-                    "text": "    public function set(string $key, mixed $value, mixed $ttl = null): bool\n    {\n        return $this->doSet($key, $value, $ttl);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "122f8c1334a5fd200e1ace0f82d2b6958fa329d9afd8480b1e708d6709cef0cb"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpUnhandledExceptionInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Unhandled exceptions",
-            "markdown": "Unhandled exceptions"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 120,
-                  "startColumn": 23,
-                  "charOffset": 3740,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "doHas"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 118,
-                  "startColumn": 1,
-                  "charOffset": 3669,
-                  "charLength": 99,
-                  "snippet": {
-                    "text": "    public function has(string $key): bool\n    {\n        return $this->doHas((string) $key);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "1a70d27b5f290f46eeb8a56584414786a6c2fbcac74160f4ca510b86c1e627f3"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpUnhandledExceptionInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Unhandled exceptions",
-            "markdown": "Unhandled exceptions"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 86,
-                  "startColumn": 23,
-                  "charOffset": 2527,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "doGet"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 84,
-                  "startColumn": 1,
-                  "charOffset": 2432,
-                  "charLength": 133,
-                  "snippet": {
-                    "text": "    public function get(string $key, mixed $default = null): mixed\n    {\n        return $this->doGet((string) $key, $default);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "5d5f66f048df7112de1f795fd7e95c768d8cfa87f541988bd0620c91ed751424"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpUnhandledExceptionInspection",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Unhandled exceptions",
-            "markdown": "Unhandled exceptions"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 23,
-                  "charOffset": 1334,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "doDelete"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 50,
-                  "startColumn": 1,
-                  "charOffset": 1260,
-                  "charLength": 105,
-                  "snippet": {
-                    "text": "    public function delete(string $key): bool\n    {\n        return $this->doDelete((string) $key);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "953116742676c75ab20617dd299297ec9ccddc8f5e3667849d58a026d2ee8fd1"
-          },
-          "properties": {
-            "ideaSeverity": "WEAK WARNING",
-            "qodanaSeverity": "Moderate",
-            "tags": [
-              "PHP"
-            ]
-          }
-        },
-        {
-          "ruleId": "PhpVoidFunctionResultUsedInspection",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "'void' method 'doGetMultiple' result used",
-            "markdown": "'void' method 'doGetMultiple' result used"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/Cache.php",
-                  "uriBaseId": "SRCROOT"
-                },
-                "region": {
-                  "startLine": 105,
-                  "startColumn": 16,
-                  "charOffset": 3358,
-                  "charLength": 37,
-                  "snippet": {
-                    "text": "$this->doGetMultiple($keys, $default)"
-                  },
-                  "sourceLanguage": "PHP"
-                },
-                "contextRegion": {
-                  "startLine": 103,
-                  "startColumn": 1,
-                  "charOffset": 3259,
-                  "charLength": 144,
-                  "snippet": {
-                    "text": "    public function getMultiple(mixed $keys, mixed $default = null): iterable\n    {\n        return $this->doGetMultiple($keys, $default);\n    }\n"
-                  },
-                  "sourceLanguage": "PHP"
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "project",
-                  "kind": "module"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "equalIndicator/v1": "59b546d290be4c4250847c87433699019c5ca7c4a3c6dcabf320bc0b99b423a2"
-          },
-          "properties": {
-            "ideaSeverity": "WARNING",
-            "qodanaSeverity": "High",
-            "tags": [
-              "PHP"
-            ]
-          }
-        }
-      ],
+      "results": [],
       "automationDetails": {
         "id": "project/qodana/2024-01-17",
-        "guid": "2e52ee23-424c-412b-9220-180508dead0a",
+        "guid": "d34f9381-b5a5-4dbf-bf11-62565fe11d82",
         "properties": {
-          "jobUrl": "https://github.com/niden/proxy-psr16/actions/runs/7557072685"
+          "jobUrl": ""
         }
       },
       "newlineSequences": [
@@ -30031,12 +28765,17 @@
         "\n"
       ],
       "properties": {
+        "coverage": {
+          "totalCoverage": 100,
+          "totalLines": 18,
+          "totalCoveredLines": 18
+        },
         "configProfile": "recommended",
-        "deviceId": "200820300000000-c2cb-0e05-25c1-388fb917b50c",
+        "deviceId": "200820300000000-9911-ac1c-8d5e-6afc45062550",
         "qodanaNewResultSummary": {
-          "moderate": 20,
+          "moderate": 18,
           "high": 3,
-          "total": 23
+          "total": 21
         }
       }
     }

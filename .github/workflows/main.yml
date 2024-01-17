@@ -81,14 +81,6 @@ jobs:
             -v \
             --coverage-php tests/support/output/coverage-${{ matrix.php }}.xml
 
-      - name: Upload coverage to Codecov
-        if: success()
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          directory: ./tests/support/output/
-          files: coverage-8.0.xml,coverage-8.1.xml,coverage-8.2.xml,coverage-8.3.xml
-
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2023.2
         env:
