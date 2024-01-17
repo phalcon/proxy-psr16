@@ -47,7 +47,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if the $key string is
      *                                  not a legal value.
      */
-    public function delete($key): bool
+    public function delete(string $key): bool
     {
         return $this->doDelete((string) $key);
     }
@@ -81,7 +81,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if the $key string is
      * not a legal value.
      */
-    public function get($key, $default = null)
+    public function get(string $key, mixed $default = null): mixed
     {
         return $this->doGet((string) $key, $default);
     }
@@ -100,7 +100,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if $keys is neither an
      * array nor a Traversable, or if any of the $keys are not a legal value.
      */
-    public function getMultiple($keys, $default = null)
+    public function getMultiple(mixed $keys, mixed $default = null): iterable
     {
         return $this->doGetMultiple($keys, $default);
     }
@@ -115,7 +115,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if the $key string is
      * not a legal value.
      */
-    public function has($key): bool
+    public function has(string $key): bool
     {
         return $this->doHas((string) $key);
     }
@@ -138,7 +138,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if the $key string is not
      * a legal value.
      */
-    public function set($key, $value, $ttl = null): bool
+    public function set(string $key, mixed $value, mixed $ttl = null): bool
     {
         return $this->doSet($key, $value, $ttl);
     }
@@ -160,7 +160,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if $values is neither an
      * array nor a Traversable, or if any of the $values are not a legal value.
      */
-    public function setMultiple($values, $ttl = null): bool
+    public function setMultiple($values, mixed $ttl = null): bool
     {
         return $this->doSetMultiple($values, $ttl);
     }
