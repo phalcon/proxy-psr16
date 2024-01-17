@@ -46,8 +46,12 @@ jobs:
       - name: Run PHP_CodeSniffer
         run: docker run --rm -v $(pwd):/data cytopia/phpcs --standard=./phpcs.xml
 
-      - name: Run PHPStan
-        run: docker run --rm -v $(pwd):/app ghcr.io/phpstan/phpstan -c phpstan.neon src/
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6 # or alternative dependency management
+      - uses: php-actions/phpstan@v3
+        with:
+          configuration: ./phpstan.neon
 
 # Running Tests
   build-and-test:
