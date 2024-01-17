@@ -8,8 +8,6 @@
 name: Phalcon CI
 
 on:
-  schedule:
-    - cron: '0 2 * * *' # Daily at 02:00 runs only on default branch
   push:
     paths-ignore:
       - '**.md'
@@ -31,14 +29,9 @@ env:
   EXTENSIONS: apcu, phalcon-5.6.0
 
 jobs:
-  build-and-test:
-    name: tests / PHP-${{ matrix.php }}
-
+  quality:
+    name: Quality Tests
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        php: [ '8.0', '8.1', '8.2', '8.3' ]
 
     steps:
       - uses: actions/checkout@v3
@@ -46,7 +39,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: 8.0
           extensions: ${{ env.EXTENSIONS }}
           ini-values: apc.enable_cli=on, session.save_path=${{ env.SESSION_SAVE_PATH }}
           tools: pecl, composer:v2
@@ -62,12 +55,8 @@ jobs:
         with:
           composer-options: "--prefer-dist"
 
-      - name: Setup Tests
-        shell: bash
-        run: |
-          cp config/.env.default .env
+      - name: Run PHP CodeSniffer
+        run: vendor/bin/phpcs --standard=./phpcs.xml
 
-      - name: Run Unit Tests
-        if: always()
-        run: |
-          vendor/bin/phpunit tests/unit --testdox --process-isolation -v 
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyze -l max src/
