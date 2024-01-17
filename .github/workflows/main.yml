@@ -84,19 +84,21 @@ jobs:
         shell: bash
         run: |
           cp config/.env.default .env
-          vendor/bin/codecept build
-#          php tests/_config/generate-db-schemas.php
 
       - name: Run Unit Tests
         if: always()
-        run: vendor/bin/codecept run --coverage-xml=coverage-${{ matrix.php }}.xml --ext DotReporter integration
+        run: |
+          vendor/bin/phpunit tests/unit \
+            --process-isolation \
+            -v \
+            --coverage-clover tests/support/output/coverage-${{ matrix.php }}.xml
 
       - name: Upload coverage to Codecov
         if: success()
         uses: codecov/codecov-action@v3
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          directory: ./tests/_output/
+          directory: ./tests/support/output/
           files: coverage-8.0.xml,coverage-8.1.xml,coverage-8.2.xml,coverage-8.3.xml
 
       - name: 'Qodana Scan'
