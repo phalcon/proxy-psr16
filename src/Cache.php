@@ -138,7 +138,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if the $key string is not
      * a legal value.
      */
-    public function set(string $key, mixed $value, null|int|DateInterval $ttl = null): bool
+    public function set(string $key, mixed $value, mixed $ttl = null): bool
     {
         return $this->doSet($key, $value, $ttl);
     }
@@ -160,7 +160,7 @@ class Cache extends AbstractCache implements CacheInterface
      * @throws InvalidArgumentException MUST be thrown if $values is neither an
      * array nor a Traversable, or if any of the $values are not a legal value.
      */
-    public function setMultiple($values, null|int|DateInterval $ttl = null): bool
+    public function setMultiple($values, mixed $ttl = null): bool
     {
         return $this->doSetMultiple($values, $ttl);
     }
