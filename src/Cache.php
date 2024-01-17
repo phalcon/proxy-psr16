@@ -19,8 +19,8 @@ use Phalcon\Cache\Adapter\AdapterInterface;
 use Psr\SimpleCache\CacheInterface;
 
 /**
- * This component offers caching capabilities for your application.
- * Phalcon\Cache implements PSR-16.
+ * Class acting as a proxy between Phalcon\Cache and the PSR\SimpleCache
+ * interface
  *
  * @property AdapterInterface $adapter
  */
@@ -49,7 +49,7 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function delete(string $key): bool
     {
-        return $this->doDelete((string) $key);
+        return $this->doDelete($key);
     }
 
     /**
@@ -83,18 +83,18 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function get(string $key, mixed $default = null): mixed
     {
-        return $this->doGet((string) $key, $default);
+        return $this->doGet($key, $default);
     }
 
     /**
      * Obtains multiple cache items by their unique keys.
      *
-     * @param iterable<mixed, mixed> $keys    A list of keys that can obtained
-     *                                        in a single operation.
-     * @param mixed                  $default Default value to return for keys
-     *                                        that do not exist.
+     * @param iterable<mixed, mixed> $keys    A list of keys that can be
+     *                                        obtained in a single operation.
+     * @param mixed                  $default Default value to return for
+     *                                        keys that do not exist.
      *
-     * @return iterable<array-key, mixed> A list of key => value pairs. Cache
+     * @return iterable<string, mixed> A list of key => value pairs. Cache
      * keys that do not exist or are stale will have $default as value.
      *
      * @throws InvalidArgumentException MUST be thrown if $keys is neither an
@@ -117,12 +117,12 @@ class Cache extends AbstractCache implements CacheInterface
      */
     public function has(string $key): bool
     {
-        return $this->doHas((string) $key);
+        return $this->doHas($key);
     }
 
     /**
      * Persists data in the cache, uniquely referenced by a key with an optional
-     * expiration TTL time.
+     * expiration TTL time
      *
      * @param string                $key    The key of the item to store.
      * @param mixed                 $value  The value of the item to store.

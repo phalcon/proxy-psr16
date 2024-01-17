@@ -11,34 +11,36 @@
 
 declare(strict_types=1);
 
-namespace Phalcon\Proxy\Psr16\Tests\Integration\Cache\Cache;
+namespace Phalcon\Proxy\Psr16\Tests\Unit\Cache;
 
-use IntegrationTester;
-use Phalcon\Cache\Adapter\AdapterInterface;
 use Phalcon\Cache\AdapterFactory;
 use Phalcon\Proxy\Psr16\Cache;
 use Phalcon\Storage\SerializerFactory;
+use PHPUnit\Framework\TestCase;
+use Psr\SimpleCache\CacheInterface;
 
-class GetAdapterCest
+final class ConstructTest extends TestCase
 {
     /**
-     * Tests Phalcon\Cache :: getAdapter()
+     * Tests Phalcon\Cache :: __construct()
      *
      * @author Phalcon Team <team@phalcon.io>
-     * @since  2020-09-09
+     * @since  2024-01-17
      */
-    public function cacheCacheGetAdapter(IntegrationTester $I)
+    public function testCacheCacheConstruct()
     {
-        $I->wantToTest('Cache\Cache - getAdapter()');
-
         $serializer = new SerializerFactory();
         $factory    = new AdapterFactory($serializer);
-        $instance   = $factory->newInstance('apcu');
+        $options    = [
+            'defaultSerializer' => 'Json',
+            'lifetime'          => 7200,
+        ];
+
+        $instance = $factory->newInstance('apcu', $options);
 
         $adapter = new Cache($instance);
 
-        $class  = AdapterInterface::class;
-        $actual = $adapter->getAdapter();
-        $I->assertInstanceOf($class, $actual);
+        $this->assertInstanceOf(Cache::class, $adapter);
+        $this->assertInstanceOf(CacheInterface::class, $adapter);
     }
 }

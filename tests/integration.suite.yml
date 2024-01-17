@@ -1,7 +1,0 @@
-actor: IntegrationTester
-modules:
-  enabled:
-    - Asserts
-    - Filesystem
-    - Helper\Integration
-    - Helper\Unit
