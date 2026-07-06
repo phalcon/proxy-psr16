@@ -1,6 +1,6 @@
 # Phalcon Framework - Proxy PSR-16
 
-**DEPRECATED** Please use phalcon/bridge-proxy16
+**DEPRECATED** Please use phalcon/bridge-psr16
 
 [![PDS Skeleton][pds_skeleton]](https://github.com/php-pds/skeleton)
 [![Phalcon CI][actions_badge]](https://github.com/phalcon/proxy-psr16/actions/workflows/main.yml) 
